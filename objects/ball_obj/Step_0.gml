@@ -1,6 +1,7 @@
 var obstacle = global.collision_cache[# x, y];
 if (obstacle) {
 	global.checks++;
+	
 	xprevious = x - hspeed;
 	yprevious = y - vspeed;
 	obstacle = collision_line(xprevious, yprevious, x, y, obstacle_parent, false, true);
@@ -8,7 +9,7 @@ if (obstacle) {
 		return;
 	}
 	
-	var edge = line_rectangle_intersection(xprevious, yprevious, x, y, obstacle.bbox_right, obstacle.bbox_top, obstacle.bbox_left, obstacle.bbox_bottom);
+	var edge = line_rectangle_intersection(0, 0, hspeed, vspeed, obstacle.bbox_right - xprevious, obstacle.bbox_top - yprevious, obstacle.bbox_left - xprevious, obstacle.bbox_bottom - yprevious);
 	show_debug_message(edge);
 	switch(edge) {
 		case 1:
@@ -35,10 +36,10 @@ if (obstacle) {
 			{
 				var ball_old = instance_find(ball_obj, i);
 				var ball_new = instance_create_layer(ball_old.x, ball_old.y, "BrickLayer", ball_obj);
-				ball_new.direction = ball_old.direction + 120;
+				ball_new.direction = ball_old.direction + random_range(60, 120);
 				
 				ball_new = instance_create_layer(ball_old.x, ball_old.y, "BrickLayer", ball_obj);
-				ball_new.direction = ball_old.direction + 240;
+				ball_new.direction = ball_old.direction + random_range(120, 180);
 			}
 		}
 	}
