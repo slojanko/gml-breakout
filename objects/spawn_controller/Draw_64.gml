@@ -1,0 +1,1 @@
+draw_text(0, 16, instance_count);
