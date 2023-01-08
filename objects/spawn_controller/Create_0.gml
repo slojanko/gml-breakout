@@ -1,8 +1,3 @@
-show_debug_overlay(true);
-show_debug_message("code_is_compiled " + bool_to_string(code_is_compiled()));
-randomize();
-
-global.collision_cache = ds_grid_create(room_width, room_height);
 for(var xx = BRICK_SIZE / 2; xx <= room_width - BRICK_SIZE / 2; xx += BRICK_SIZE) {
 	for(var yy = BRICK_SIZE / 2; yy <= room_height - BRICK_SIZE / 2; yy += BRICK_SIZE) {
 		if (collision_point(xx, yy, brick_placeholder_obj, false, true)) {

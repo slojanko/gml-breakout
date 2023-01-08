@@ -1,20 +1,14 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "wall_placeholder_obj",
-  "spriteId": {
-    "name": "wall_placeholder_spr",
-    "path": "sprites/wall_placeholder_spr/wall_placeholder_spr.yy",
-  },
-  "solid": true,
+  "name": "startup_controller",
+  "spriteId": null,
+  "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obstacle_parent",
-    "path": "objects/obstacle_parent/obstacle_parent.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -29,12 +23,11 @@
   "physicsShapePoints": [],
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Placeholders",
-    "path": "folders/Objects/Placeholders.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
 }
