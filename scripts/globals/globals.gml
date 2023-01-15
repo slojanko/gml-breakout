@@ -1,5 +1,7 @@
-#macro BALL_SIZE 6
-#macro BRICK_SIZE 8
-#macro TRIPLE_COUNT 10
-global.triple_spawned = 0;
-global.triple_channel = animcurve_get(three_ac).channels[0];
+#macro BALL_SIZE 8
+#macro BRICK_SIZE 6
+#macro POWERUP_SIZE 16
+#macro BALL_SPEED 7
+#macro POWERUP_SPEED 3
+#macro MAX_BALLS_FOR_TRIPLE power(3, 8)
+#macro MAX_BALLS power(3, 9)

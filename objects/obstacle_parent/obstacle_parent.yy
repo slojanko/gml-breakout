@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "obstacle_parent",
   "spriteId": null,
-  "solid": true,
+  "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,

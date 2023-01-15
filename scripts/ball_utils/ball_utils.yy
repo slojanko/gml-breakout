@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "utils_impl",
+  "name": "ball_utils",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
