@@ -1,4 +1,3 @@
-show_debug_overlay(true);
 show_debug_message("code_is_compiled " + bool_to_string(code_is_compiled()));
 
 gpu_set_zwriteenable(false);
