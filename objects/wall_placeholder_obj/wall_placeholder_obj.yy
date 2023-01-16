@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "wall_placeholder_obj",
   "spriteId": {
-    "name": "wall_placeholder_spr",
-    "path": "sprites/wall_placeholder_spr/wall_placeholder_spr.yy",
+    "name": "wall_spr",
+    "path": "sprites/wall_spr/wall_spr.yy",
   },
   "solid": true,
   "visible": true,

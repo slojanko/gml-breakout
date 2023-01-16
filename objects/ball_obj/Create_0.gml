@@ -1,8 +1,9 @@
 image_xscale = BALL_SIZE / sprite_width;
 image_yscale = BALL_SIZE / sprite_height;
 direction = 90;
-speed = BALL_SPEED;
+speed = 0;
 collision = ds_list_create();
+index = 0;
 
 ////var obstacle = collision_point(x, y, player_obj, false, true);
 ////if (obstacle) {

@@ -18,7 +18,6 @@
     {"id":{"name":"wall_placeholder_spr","path":"sprites/wall_placeholder_spr/wall_placeholder_spr.yy",},"order":2,},
     {"id":{"name":"wall_spr","path":"sprites/wall_spr/wall_spr.yy",},"order":2,},
     {"id":{"name":"ball_obj","path":"objects/ball_obj/ball_obj.yy",},"order":1,},
-    {"id":{"name":"wall_obj","path":"objects/wall_obj/wall_obj.yy",},"order":0,},
     {"id":{"name":"breakout_spr","path":"sprites/breakout_spr/breakout_spr.yy",},"order":0,},
     {"id":{"name":"startup_controller","path":"objects/startup_controller/startup_controller.yy",},"order":2,},
     {"id":{"name":"ball_spr","path":"sprites/ball_spr/ball_spr.yy",},"order":0,},

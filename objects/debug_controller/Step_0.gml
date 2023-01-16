@@ -2,6 +2,14 @@ if (mouse_check_button_pressed(mb_right)) {
 	ball_triple();
 }
 
+if (mouse_check_button_pressed(mb_left)) {
+	with(wall_placeholder_obj) {
+		if (y >= 1048) {
+			instance_destroy();
+		}
+	}
+}
+
 //if (mouse_check_button_pressed(mb_left)) {
 //	fps_sum = 0;
 //	fps_duration = 0;

@@ -4,10 +4,22 @@ function bool_to_string(value) {
 
 gml_pragma("forceinline");
 function ball_triple() {
-	var ball_count = instance_number(ball_obj);
-	for(var i = 0; i < ball_count; i++)
-	{
-		var ball_old = instance_find(ball_obj, i);
+	var ball_count = global.balls_active;
+	if (ball_count > MAX_BALLS_FOR_TRIPLE) {
+		ball_count = floor((MAX_BALLS - ball_count) / 2);
+	}
+	
+	for(var i = 0; i < MAX_BALLS; i++) {
+		var ball_old = global.ball_pool[i];
+		if (ball_old.speed == 0) {
+			continue;
+		}
+		
+		if (ball_count == 0) {
+			break;
+		}
+		
+		ball_count--;
 			
 		var ball_new = ball_get();
 		ball_new.x = ball_old.x;
@@ -22,22 +34,27 @@ function ball_triple() {
 		ball_new.xprevious = ball_old.xprevious;
 		ball_new.yprevious = ball_old.yprevious;
 		ball_new.direction = ball_old.direction + random_range(220, 260);
-	}
+	}	
 	
-	instance_activate_region(0, 0, room_width, room_height, true);
+	for(var i = 0; i < MAX_BALLS; i++) {
+		if (global.ball_pool[i].y < 9000) {
+			global.ball_pool[i].speed = BALL_SPEED;
+		}
+	}
 }
 
 gml_pragma("forceinline");
 function ball_get() {
-	var ball_new = ds_stack_pop(global.ball_pool);
+	var ball_new = global.ball_pool[ds_stack_pop(global.ball_free_indices)];
+	global.balls_active++;
 	return ball_new;
 }
 
 gml_pragma("forceinline");
 function ball_release() {
-	x = 10000;
-	y = 10000;
-	ds_stack_push(global.ball_pool, id);
+	speed = 0;
+	ds_stack_push(global.ball_free_indices, index);
+	global.balls_active--;
 }
 
 gml_pragma("forceinline");
