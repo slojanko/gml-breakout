@@ -15,7 +15,6 @@ global.ball_free_indices = ds_stack_create();
 global.balls_active = 0;
 
 var first_ball = instance_find(ball_obj, 0);
-first_ball.speed = BALL_SPEED;
 first_ball.index = 0;
 global.ball_pool[0] = first_ball;
 global.balls_active++;

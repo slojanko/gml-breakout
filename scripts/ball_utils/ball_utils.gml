@@ -53,6 +53,7 @@ function ball_get() {
 gml_pragma("forceinline");
 function ball_release() {
 	speed = 0;
+	y = 10000;
 	ds_stack_push(global.ball_free_indices, index);
 	global.balls_active--;
 }
@@ -60,21 +61,25 @@ function ball_release() {
 gml_pragma("forceinline");
 function ball_rectangle_bounce(rx1, ry1, rx2, ry2) {
 	var ky = vspeed / hspeed;
-	var kx = 1 / vspeed;
+	var kx = hspeed / vspeed;
 	
 	var right_y = ky * rx1;
 	var left_y = ky * rx2;
 	var top_x = kx * ry1; 
 	var bottom_x = kx * ry2; 
 	
-	var right_dist = (right_y > ry1 && right_y < ry2) ? rx1 * rx1 + right_y * right_y : 10000000;
-	var left_dist = (left_y > ry1 && left_y < ry2) ? rx2 * rx2 + left_y * left_y : 10000000;
-	var top_dist = (top_x < rx1 && top_x > rx2) ? top_x * top_x + ry1 * ry1 : 10000000;
-	var bottom_dist = (bottom_x < rx1 && bottom_x > rx2) ? bottom_x * bottom_x + ry2 * ry2 : 10000000;
+	var right_dist = (right_y > ry1 && right_y < ry2) ? rx1 * rx1 + right_y * right_y : MAX_COLLISION_DISTANCE;
+	var left_dist = (left_y > ry1 && left_y < ry2) ? rx2 * rx2 + left_y * left_y : MAX_COLLISION_DISTANCE;
+	var top_dist = (top_x < rx1 && top_x > rx2) ? top_x * top_x + ry1 * ry1 : MAX_COLLISION_DISTANCE;
+	var bottom_dist = (bottom_x < rx1 && bottom_x > rx2) ? bottom_x * bottom_x + ry2 * ry2 : MAX_COLLISION_DISTANCE;
 	
 	var t = min(right_dist, left_dist, top_dist, bottom_dist);
 	
 	switch(t) {
+		case MAX_COLLISION_DISTANCE:
+			vspeed = -vspeed;
+			hspeed = -hspeed;
+			break;
 		case right_dist: 
 			hspeed = abs(hspeed);
 			break;

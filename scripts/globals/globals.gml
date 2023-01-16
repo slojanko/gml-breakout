@@ -5,3 +5,4 @@
 #macro POWERUP_SPEED 3
 #macro MAX_BALLS_FOR_TRIPLE power(3, 8)
 #macro MAX_BALLS power(3, 9)
+#macro MAX_COLLISION_DISTANCE 100000000
